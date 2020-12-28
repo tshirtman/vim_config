@@ -1,0 +1,57 @@
+global !p
+from functools import lru_cache
+
+@lru_cache(10)
+def symbol_to_camelcase(name):
+    names = name.split('_')
+    if not names:
+            return ''
+    return ''.join(map(lambda x: x.capitalize(), names))
+endglobal
+
+snippet kivy_app
+'''$0
+'''
+from kivy.app import App
+from kivy.lang import Builder
+
+
+KV = '''
+$1
+'''
+
+class ${2:Application}(App):
+    def build(self):
+        return Builder.load_string(KV)
+
+
+if __name__ == "__main__":
+    $2().run()
+endsnippet
+
+snippet rv
+RecycleView:
+    viewclass: '$1'
+    data: $0
+
+    Recycle${2:Box}Layout:
+        size_hint_${3:y}: None
+        ${4:height}: self.minimum_${4}
+endsnippet
+
+snippet ds
+'''$0
+'''
+
+endsnippet
+
+snippet class
+class $1${2:(object)}:
+    """$3
+    """
+
+    def __init__(self, ${4}**kwargs):
+        """${5:TODO}"""
+        super().__init__(**kwargs)
+
+endsnippet

@@ -1,0 +1,80 @@
+syntax on
+filetype on
+let mapleader = ","
+set encoding=UTF-8
+
+set bs=indent,eol,start
+set path=.
+set hidden
+set autowrite
+set lazyredraw
+
+set undofile
+set directory=~/.vim/swap/ " move swapfiles to a common directory
+set undodir=~/.vim/undo/  " put undo files to a common directory
+
+set incsearch
+set smartcase
+set updatetime=300
+
+source ~/.vim/plugin/plug-list.vim
+
+augroup SourceVimFiles
+       	autocmd!
+	autocmd BufWritePost *.vim source %
+	autocmd BufWritePost $MYVIMRC source %
+augroup END
+
+inoremap <Right> <nop>
+inoremap <Left> <nop>
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+
+nnoremap <Right> <nop>
+nnoremap <Left> <nop>
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+" nnoremap <cr> o<esc>
+nnoremap yom :silent set mouse~=a
+
+nnoremap U :silent redo<cr>
+nnoremap <c-c> :silent close<cr>
+nnoremap <c-n> :silent vs<cr>
+
+nnoremap <a-n> :cn<cr>
+nnoremap <a-p> :cp<cr>
+
+inoremap jj <esc>
+nnoremap _ <c-^>
+
+nnoremap <leader>ts :tselect <c-r><c-w><cr>
+nnoremap <leader>tj :tjump <c-r><c-w><cr>
+
+nnoremap <leader>ed :e ~/.vim/plugin/
+nnoremap <leader>ep :e ~/.vim/plugin/plug-list.vim
+nnoremap <leader>ev :e ~/.vim/vimrc
+
+" plugin mappings
+nnoremap <c-b> :FZF<cr>
+nnoremap <silent><leader>. :Buffers<cr>
+nnoremap <silent><leader>/ :Ag<cr>
+nnoremap <silent><leader>b :Lines<cr>
+nnoremap <silent><leader>h :dateHelptags<cr>
+
+nnoremap <silent><leader>r :NERDTreeToggle<cr>
+nnoremap <silent><leader>M :Magit<cr>
+nnoremap <silent><leader>m :Merginal<cr>
+nnoremap <silent><leader>v :Vista vim_lsp<cr>
+
+nnoremap <silent><leader>gg :UndotreeToggle<cr>
+" COC
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>rf <Plug>(coc-refactor)
+
+" disable coc warning
+let g:coc_disable_startup_warning = 1
+autocmd CursorHold * silent call CocActionAsync('highlight')

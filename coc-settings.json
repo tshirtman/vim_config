@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "~/.local/bin/python-shim",
+    "python.venvFolders": ["~/.virtualenvs", "."],
+    "diagnostic.errorSign": "☠️",
+    "diagnostic.warningSign": "⚠️",
+    "diagnostic.infoSign": "ℹ",
+    "diagnostic.hintSign": "💡"
+}
