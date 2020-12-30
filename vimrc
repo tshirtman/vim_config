@@ -37,6 +37,7 @@ nnoremap <Up> <nop>
 nnoremap <Down> <nop>
 " nnoremap <cr> o<esc>
 nnoremap yom :silent set mouse~=a
+nnoremap <leader>, <c-w>
 
 nnoremap U :silent redo<cr>
 nnoremap <c-c> :silent close<cr>
