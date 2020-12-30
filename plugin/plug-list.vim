@@ -24,6 +24,7 @@ Plug 'tpope/vim-surround'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'liuchengxu/vista.vim'
 Plug 'machakann/vim-swap'
+Plug 'towolf/vim-helm'
 
 "" style
 Plug 'chriskempson/base16-vim'
@@ -54,5 +55,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-characterize'
 Plug 'mbbill/undotree'
+
+"" DB management
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'kristijanhusak/vim-dadbod-completion'
 
 call plug#end()
