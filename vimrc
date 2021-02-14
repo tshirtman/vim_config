@@ -2,6 +2,7 @@ syntax on
 filetype on
 let mapleader = ","
 set encoding=UTF-8
+set t_Co=256
 
 set bs=indent,eol,start
 set path=.
@@ -20,9 +21,9 @@ set updatetime=300
 source ~/.vim/plugin/plug-list.vim
 
 augroup SourceVimFiles
-       	autocmd!
-	autocmd BufWritePost *.vim source %
-	autocmd BufWritePost $MYVIMRC source %
+        autocmd!
+        autocmd BufWritePost *.vim source %
+        autocmd BufWritePost $MYVIMRC source %
 augroup END
 
 inoremap <Right> <nop>
@@ -67,6 +68,8 @@ nnoremap <silent><leader>m :Merginal<cr>
 nnoremap <silent><leader>v :Vista vim_lsp<cr>
 
 nnoremap <silent><leader>gg :UndotreeToggle<cr>
+nnoremap <leader>gs :Gstatus<cr>
+
 " COC
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -78,3 +81,22 @@ nmap <leader>rf <Plug>(coc-refactor)
 " disable coc warning
 let g:coc_disable_startup_warning = 1
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" theme
+function s:setcolors()
+    if &background == 'dark'
+        colorscheme onehalfdark
+        highlight Normal ctermbg=233
+        highlight NonText ctermbg=233
+    else
+        colorscheme onehalflight
+    endif
+    highlight Comment ctermfg=230 cterm=bold
+endfunction
+
+call s:setcolors()
+
+augroup background
+    autocmd!
+    autocmd OptionSet background call s:setcolors()
+augroup END

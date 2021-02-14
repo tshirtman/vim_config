@@ -27,7 +27,8 @@ Plug 'machakann/vim-swap'
 Plug 'towolf/vim-helm'
 
 "" style
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 "" file management
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
