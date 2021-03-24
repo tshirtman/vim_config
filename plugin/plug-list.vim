@@ -12,13 +12,18 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-apathy'
-Plug 'anntzer/vim-cython'
+Plug 'psf/black'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 "" snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 "" other language support
+Plug 'vim-python/python-syntax'
+Plug 'anntzer/vim-cython'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'ludovicchabant/vim-gutentags'

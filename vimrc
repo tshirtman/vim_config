@@ -3,6 +3,7 @@ filetype on
 let mapleader = ","
 set encoding=UTF-8
 set t_Co=256
+set background=dark
 
 set bs=indent,eol,start
 set path=.
@@ -54,6 +55,7 @@ nnoremap <leader>tj :tjump <c-r><c-w><cr>
 
 nnoremap <leader>ed :e ~/.vim/plugin/
 nnoremap <leader>ep :e ~/.vim/plugin/plug-list.vim
+nnoremap <leader>ef :e ~/.vim/ftplugin/
 nnoremap <leader>ev :e ~/.vim/vimrc
 
 " plugin mappings
@@ -76,8 +78,11 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gru <Plug>(coc-references-used)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>rf <Plug>(coc-refactor)
+nmap <leader>f <Plug>(coc-fix-current)
+nmap <silent> K :call CocAction('doHover')<CR>
 
 " disable coc warning
 let g:coc_disable_startup_warning = 1
@@ -89,10 +94,13 @@ function s:setcolors()
         colorscheme onehalfdark
         highlight Normal ctermbg=233
         highlight NonText ctermbg=233
+	highlight Comment ctermfg=230 cterm=bold
+	highlight CursorColumn ctermbg=236
+	highlight Pmenu ctermbg=234 ctermfg=7
+	highlight Visual ctermbg=240
     else
         colorscheme onehalflight
     endif
-    highlight Comment ctermfg=230 cterm=bold
 endfunction
 
 call s:setcolors()
