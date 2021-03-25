@@ -92,12 +92,12 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 function s:setcolors()
     if &background == 'dark'
         colorscheme onehalfdark
-        highlight Normal ctermbg=233
-        highlight NonText ctermbg=233
-	highlight Comment ctermfg=230 cterm=bold
-	highlight CursorColumn ctermbg=236
-	highlight Pmenu ctermbg=234 ctermfg=7
-	highlight Visual ctermbg=240
+        highlight Normal ctermbg=0
+        highlight NonText ctermbg=0
+        highlight Comment ctermfg=230 cterm=bold
+        highlight CursorColumn ctermbg=236
+        highlight Pmenu ctermbg=234 ctermfg=7
+        highlight Visual ctermbg=240
     else
         colorscheme onehalflight
     endif
