@@ -3,7 +3,12 @@ filetype on
 let mapleader = ","
 set encoding=UTF-8
 set t_Co=256
-set background=dark
+
+if !exists("background_loaded")
+    " only set the background the first time we load the vimrc
+    let background_loaded=1
+    set background=dark
+endif
 
 set bs=indent,eol,start
 set path=.
@@ -18,6 +23,8 @@ set undodir=~/.vim/undo/  " put undo files to a common directory
 set incsearch
 set smartcase
 set updatetime=300
+
+set fillchars+=vert:\▏
 
 source ~/.vim/plugin/plug-list.vim
 
@@ -98,8 +105,11 @@ function s:setcolors()
         highlight CursorColumn ctermbg=236
         highlight Pmenu ctermbg=234 ctermfg=7
         highlight Visual ctermbg=240
+        highlight VertSplit ctermbg=0 ctermfg=238
     else
         colorscheme onehalflight
+        highlight Comment ctermfg=233 cterm=bold
+        highlight VertSplit ctermbg=231 ctermfg=255
     endif
 endfunction
 
