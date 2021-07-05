@@ -16,6 +16,8 @@ Plug 'psf/black'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 "" snippets
 Plug 'SirVer/ultisnips'
@@ -30,6 +32,10 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'liuchengxu/vista.vim'
 Plug 'machakann/vim-swap'
 Plug 'towolf/vim-helm'
+Plug 'git@gitlab.trading.imc.intra:gpettier/vim-valescom'
+Plug 'cespare/vim-toml'
+Plug 'chrisbra/csv.vim'
+Plug 'tpope/vim-jdaddy'
 
 "" style
 " Plug 'chriskempson/base16-vim'
