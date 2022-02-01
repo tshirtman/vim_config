@@ -1,8 +1,9 @@
 {
     "python.pythonPath": "~/.local/bin/python-shim",
-    "python.venvFolders": ["~/.virtualenvs", "."],
+    "python.venvPath": "~/.virtualenvs/",
     "diagnostic.errorSign": "☠️",
     "diagnostic.warningSign": "⚠️",
     "diagnostic.infoSign": "ℹ",
-    "diagnostic.hintSign": "💡"
+    "diagnostic.hintSign": "⸮",
+    "coc.preferences.extensionUpdateCheck": "daily"
 }

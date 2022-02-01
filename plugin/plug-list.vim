@@ -13,6 +13,7 @@ Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-apathy'
 Plug 'psf/black'
+Plug 'fisadev/vim-isort'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
@@ -36,6 +37,7 @@ Plug 'git@gitlab.trading.imc.intra:gpettier/vim-valescom'
 Plug 'cespare/vim-toml'
 Plug 'chrisbra/csv.vim'
 Plug 'tpope/vim-jdaddy'
+Plug 'mgedmin/coverage-highlight.vim'
 
 "" style
 " Plug 'chriskempson/base16-vim'

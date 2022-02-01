@@ -60,3 +60,14 @@ snippet _if
 if __name__ == '__main__':
     
 endsnippet
+
+
+snippet log
+from logging import getLogger
+
+logger = getLogger(${1:__name__})
+endsnippet
+
+snippet br
+breakpoint()
+endsnippet

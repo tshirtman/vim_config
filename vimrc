@@ -64,6 +64,7 @@ nnoremap <leader>ed :e ~/.vim/plugin/
 nnoremap <leader>ep :e ~/.vim/plugin/plug-list.vim
 nnoremap <leader>ef :e ~/.vim/ftplugin/
 nnoremap <leader>ev :e ~/.vim/vimrc
+nnoremap <leader>p [p
 
 " plugin mappings
 nnoremap <c-b> :FZF<cr>
@@ -79,6 +80,8 @@ nnoremap <silent><leader>v :Vista vim_lsp<cr>
 
 nnoremap <silent><leader>gg :UndotreeToggle<cr>
 nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>c :lclose<cr>
+" looking for swap mappings? g< / g> / gs  see :h swap-keywappings
 
 " COC
 nmap <silent> gd <Plug>(coc-definition)
@@ -90,6 +93,9 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>rf <Plug>(coc-refactor)
 nmap <leader>f <Plug>(coc-fix-current)
 nmap <silent> K :call CocAction('doHover')<CR>
+
+" LSP
+nmap <leader>dd :LspDocumentDiagnostics<cr>
 
 " disable coc warning
 let g:coc_disable_startup_warning = 1
@@ -119,3 +125,25 @@ augroup background
     autocmd!
     autocmd OptionSet background call s:setcolors()
 augroup END
+
+" function s:scroll_float_up()
+"     if call #coc#has_float()
+        
+"     endif
+" endfunction
+"
+" inoremap <c-u> call #coc#float#scroll(-1, 2)
+" inoremap <c-d> call #coc#float#scroll(1, 2)
+"
+nnoremap <Leader>S :call ToggleSignColumn()<CR>
+
+" Toggle signcolumn. Works on vim>=8.1 or NeoVim
+function! ToggleSignColumn()
+    if !exists("b:signcolumn_on") || b:signcolumn_on
+        set signcolumn=no
+        let b:signcolumn_on=0
+    else
+        set signcolumn=number
+        let b:signcolumn_on=1
+    endif
+endfunction
