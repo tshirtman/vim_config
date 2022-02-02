@@ -65,6 +65,7 @@ nnoremap <leader>ep :e ~/.vim/plugin/plug-list.vim
 nnoremap <leader>ef :e ~/.vim/ftplugin/
 nnoremap <leader>ev :e ~/.vim/vimrc
 nnoremap <leader>p [p
+nnoremap <leader>, <c-w>
 
 " plugin mappings
 nnoremap <c-b> :FZF<cr>
@@ -82,6 +83,7 @@ nnoremap <silent><leader>gg :UndotreeToggle<cr>
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>c :lclose<cr>
 " looking for swap mappings? g< / g> / gs  see :h swap-keywappings
+nnoremap <leader>dd :LspDocumentDiagnostic<cr>
 
 " COC
 nmap <silent> gd <Plug>(coc-definition)
@@ -147,3 +149,13 @@ function! ToggleSignColumn()
         let b:signcolumn_on=1
     endif
 endfunction
+
+function ToggleBg()
+    if &background == "light"
+      set background=dark
+  else
+      set background=light
+    endif
+endfunction
+
+nnoremap <leader>eb :call ToggleBg()<cr>

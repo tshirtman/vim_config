@@ -1,8 +1,8 @@
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set list
-set listchars=tab:——,trail:·
+setlocal softtabstop=4
+setlocal shiftwidth=4
+setlocal expandtab
+setlocal list
+setlocal listchars=tab:——,trail:·
 
 match Todo 'NOTE'
 

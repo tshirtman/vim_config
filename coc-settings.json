@@ -4,6 +4,7 @@
     "diagnostic.errorSign": "☠️",
     "diagnostic.warningSign": "⚠️",
     "diagnostic.infoSign": "ℹ",
-    "diagnostic.hintSign": "⸮",
-    "coc.preferences.extensionUpdateCheck": "daily"
+    "diagnostic.hintSign": "💡",
+    "coc.preferences.extensionUpdateCheck": "daily",
+    "python.linting.enabled": false
 }
