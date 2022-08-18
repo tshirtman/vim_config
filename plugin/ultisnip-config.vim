@@ -3,6 +3,7 @@
 " let g:UltiSnipsJumpForwardTrigger="<c-n>"
 " let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 " let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips/"]
+let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips/"
 let g:UltiSnipsExpandTrigger = "<C-t>"
 let g:UltiSnipsJumpForwardTrigger = "<C-t>"

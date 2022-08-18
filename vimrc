@@ -65,6 +65,7 @@ nnoremap <leader>ep :e ~/.vim/plugin/plug-list.vim
 nnoremap <leader>ef :e ~/.vim/ftplugin/
 nnoremap <leader>ev :e ~/.vim/vimrc
 nnoremap <leader>p [p
+nnoremap <leader>n :noh<cr>
 
 " plugin mappings
 nnoremap <c-b> :FZF<cr>
@@ -91,11 +92,24 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gru <Plug>(coc-references-used)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>rf <Plug>(coc-refactor)
+nmap <leader>rc <Plug>(coc-codeaction-cursor)
+vmap <leader>rc <Plug>(coc-codeaction-selected)
 nmap <leader>f <Plug>(coc-fix-current)
 nmap <silent> K :call CocAction('doHover')<CR>
 
 " LSP
 nmap <leader>dd :LspDocumentDiagnostics<cr>
+
+" FZF
+nnoremap <leader>T :Tag<cr>
+
+" Fugitive
+nnoremap <leader>G :Git<cr>
+
+" DBUI
+nnoremap <leader>db :DBUIToggle<cr>
+" LanguageTool
+" let g:languagetool_server='/home/gpettier/Downloads/LanguageTool-5.9-SNAPSHOT/languagetool-server.jar'
 
 " disable coc warning
 let g:coc_disable_startup_warning = 1
@@ -126,16 +140,6 @@ augroup background
     autocmd OptionSet background call s:setcolors()
 augroup END
 
-" function s:scroll_float_up()
-"     if call #coc#has_float()
-        
-"     endif
-" endfunction
-"
-" inoremap <c-u> call #coc#float#scroll(-1, 2)
-" inoremap <c-d> call #coc#float#scroll(1, 2)
-"
-nnoremap <Leader>S :call ToggleSignColumn()<CR>
 
 " Toggle signcolumn. Works on vim>=8.1 or NeoVim
 function! ToggleSignColumn()
@@ -146,4 +150,16 @@ function! ToggleSignColumn()
         set signcolumn=number
         let b:signcolumn_on=1
     endif
+endfunction
+nnoremap yoS :call ToggleSignColumn()<CR>
+
+function s:popup_filter(winid, key) abort
+    if a:key ==# get(g:, 'lsp_popup_scroll_down', "\<c-j>")
+        call win_execute(a:winid, "normal! \<c-e>")
+    elseif a:key ==# get(g:, 'lsp_popup_scroll_up', "\<c-k>")
+        call win_execute(a:winid, "normal! \<c-y>")
+    else
+        return v:false
+    endif
+    return v:true
 endfunction

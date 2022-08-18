@@ -6,7 +6,9 @@ set listchars=tab:——,trail:·
 
 match Todo 'NOTE'
 
-nnoremap <leader>,b :Black<cr>
+lnoremap <leader>,b :Black<cr>
+lnoremap <leader>,i :Isort<cr>
+lnoremap <leader>,c :Black<cr>:Isort<cr>
 
 let b:ale_python_pyright_config = {
   \ 'python': {
@@ -22,4 +24,8 @@ let b:ale_python_pyright_config = {
 nnoremap <leader>CC :HighlightCoverageForAll<cr><cr>
 nnoremap <leader>CO :HighlightCoverageOff<cr><cr>
 
-match "breakpoint()" Error
+match Error /breakpoint()/
+match Error /__import__('pudb').set_trace()/
+
+" map insecable space to space
+inoremap   <space>
