@@ -66,6 +66,8 @@ nnoremap <leader>ef :e ~/.vim/ftplugin/
 nnoremap <leader>ev :e ~/.vim/vimrc
 nnoremap <leader>p [p
 nnoremap <leader>n :noh<cr>
+nnoremap on :cn<cr>
+nnoremap op :cp<cr>
 
 " plugin mappings
 nnoremap <c-b> :FZF<cr>
@@ -163,3 +165,9 @@ function s:popup_filter(winid, key) abort
     endif
     return v:true
 endfunction
+
+augroup requirements
+    autocmd!
+    autocmd Bufread requirements*.txt set filetype=requirementstxt
+augroup end
+
