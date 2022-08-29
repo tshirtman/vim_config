@@ -45,7 +45,8 @@ nnoremap <Up> <nop>
 nnoremap <Down> <nop>
 " nnoremap <cr> o<esc>
 nnoremap yom :silent set mouse~=a
-nnoremap <leader>, <c-w>
+" nnoremap <leader>, <c-w>
+nnoremap g<cr> :terminal<cr>
 
 nnoremap U :silent redo<cr>
 nnoremap <c-c> :silent close<cr>
@@ -66,8 +67,8 @@ nnoremap <leader>ef :e ~/.vim/ftplugin/
 nnoremap <leader>ev :e ~/.vim/vimrc
 nnoremap <leader>p [p
 nnoremap <leader>n :noh<cr>
-nnoremap on :cn<cr>
-nnoremap op :cp<cr>
+nnoremap qn :cn<cr>
+nnoremap qp :cp<cr>
 
 " plugin mappings
 nnoremap <c-b> :FZF<cr>
@@ -112,6 +113,14 @@ nnoremap <leader>G :Git<cr>
 nnoremap <leader>db :DBUIToggle<cr>
 " LanguageTool
 " let g:languagetool_server='/home/gpettier/Downloads/LanguageTool-5.9-SNAPSHOT/languagetool-server.jar'
+
+
+" tests
+
+nmap <silent> <leader>gt :TestFile<CR>
+nmap <silent> <leader>gs :TestSuite<CR>
+nmap <silent> <leader>gl :TestLast<CR>
+nmap <silent> <leader>gn :TestNearest<CR>
 
 " disable coc warning
 let g:coc_disable_startup_warning = 1

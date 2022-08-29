@@ -33,11 +33,12 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'liuchengxu/vista.vim'
 Plug 'machakann/vim-swap'
 Plug 'towolf/vim-helm'
-Plug 'git@gitlab.trading.imc.intra:gpettier/vim-valescom'
 Plug 'cespare/vim-toml'
 Plug 'chrisbra/csv.vim'
 Plug 'tpope/vim-jdaddy'
 Plug 'mgedmin/coverage-highlight.vim'
+Plug 'CarloDePieri/pytest-vim-compiler'
+Plug 'vim-test/vim-test'
 
 "" style
 " Plug 'chriskempson/base16-vim'
@@ -69,6 +70,9 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-characterize'
 Plug 'mbbill/undotree'
+Plug 'manasthakur/vim-asyncmake'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'tpope/vim-dispatch'
 
 "" DB management
 Plug 'tpope/vim-dadbod'
