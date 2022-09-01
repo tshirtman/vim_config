@@ -130,7 +130,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 function s:setcolors()
     if &background == 'dark'
         colorscheme onehalfdark
-        highlight Normal ctermbg=0
+        highlight Normal ctermbg=234
+        highlight NormalNC ctermbg=0
         highlight NonText ctermbg=0
         highlight Comment ctermfg=230 cterm=bold
         highlight CursorColumn ctermbg=236
@@ -139,6 +140,8 @@ function s:setcolors()
         highlight VertSplit ctermbg=0 ctermfg=238
     else
         colorscheme onehalflight
+        highlight Normal ctermbg=230
+        highlight NormalNC ctermbg=231
         highlight Comment ctermfg=233 cterm=bold
         highlight VertSplit ctermbg=231 ctermfg=255
     endif
@@ -149,6 +152,15 @@ call s:setcolors()
 augroup background
     autocmd!
     autocmd OptionSet background call s:setcolors()
+augroup END
+
+
+" different color depending on focus
+hi NormalNC ctermbg=0
+augroup winbg
+    autocmd!
+    au WinEnter * setl wincolor=
+    au WinLeave * setl wincolor=NormalNC
 augroup END
 
 
