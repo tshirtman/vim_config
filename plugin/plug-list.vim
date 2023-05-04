@@ -39,6 +39,8 @@ Plug 'tpope/vim-jdaddy'
 Plug 'mgedmin/coverage-highlight.vim'
 Plug 'CarloDePieri/pytest-vim-compiler'
 Plug 'vim-test/vim-test'
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'GutenYe/json5.vim'
 
 "" style
 " Plug 'chriskempson/base16-vim'
@@ -73,6 +75,9 @@ Plug 'mbbill/undotree'
 Plug 'manasthakur/vim-asyncmake'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-dispatch'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'jlanzarotta/bufexplorer'
 
 "" DB management
 Plug 'tpope/vim-dadbod'

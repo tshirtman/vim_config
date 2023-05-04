@@ -1,6 +1,7 @@
 syntax on
 filetype on
 let mapleader = ","
+let g:tar_nomax=1
 set encoding=UTF-8
 set t_Co=256
 
@@ -69,6 +70,9 @@ nnoremap <leader>p [p
 nnoremap <leader>n :noh<cr>
 nnoremap qn :cn<cr>
 nnoremap qp :cp<cr>
+nnoremap <esc><esc> :lcl<cr>
+nnoremap yofh :set wfh<cr>
+nnoremap yofw :set wfw<cr>
 
 " plugin mappings
 nnoremap <c-b> :FZF<cr>
@@ -83,8 +87,6 @@ nnoremap <silent><leader>m :Merginal<cr>
 nnoremap <silent><leader>v :Vista vim_lsp<cr>
 
 nnoremap <silent><leader>gg :UndotreeToggle<cr>
-nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>c :lclose<cr>
 " looking for swap mappings? g< / g> / gs  see :h swap-keywappings
 
 " COC
@@ -127,27 +129,50 @@ let g:coc_disable_startup_warning = 1
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " theme
-function s:setcolors()
+let g:airline_theme_patch_func = 'AirlineThemePatch'
+function! AirlineThemePatch(palette)
+if g:airline_theme == 'onehalfdark'
+    highlight airline_term ctermbg=238
+    highlight airline_term_inactive ctermbg=238
+  " for colors in values(a:palette.inactive)
+  "   let colors[3] = 240
+  " endfor
+endif
+endfunction
+
+function! s:setcolors()
     if &background == 'dark'
         colorscheme onehalfdark
-        highlight Normal ctermbg=234
-        highlight NormalNC ctermbg=0
-        highlight NonText ctermbg=0
+        highlight Normal ctermbg=233
+        highlight NormalNC ctermbg=233
+        highlight NonText ctermbg=233
         highlight Comment ctermfg=230 cterm=bold
         highlight CursorColumn ctermbg=236
         highlight Pmenu ctermbg=234 ctermfg=7
-        highlight Visual ctermbg=240
-        highlight VertSplit ctermbg=0 ctermfg=238
+        highlight Visual cterm=reverse
+        highlight VertSplit ctermbg=234 ctermfg=238
+        highlight StatusLine ctermbg=3 ctermfg=1 term=bold
+        highlight StatusLineNC ctermbg=3 ctermfg=1 cterm=reverse
+        highlight StatusLineTerm ctermbg=3 ctermfg=1 term=underline
+        " restore coc highlihts
+        highlight CocInlayHint ctermfg=230
+        " highlight airline_term ctermbg=238
+        " highlight airline_term_inactive ctermbg=238
     else
         colorscheme onehalflight
-        highlight Normal ctermbg=230
-        highlight NormalNC ctermbg=231
+        highlight Normal ctermbg=231
+        highlight NormalNC ctermbg=255
         highlight Comment ctermfg=233 cterm=bold
-        highlight VertSplit ctermbg=231 ctermfg=255
+        highlight VertSplit ctermbg=255 ctermfg=254
     endif
 endfunction
 
-call s:setcolors()
+function! s:update_highlights()
+        highlight StatusLine ctermbg=1 ctermfg=2 term=bold
+        highlight StatusLineNC ctermbg=1 ctermfg=2
+        highlight StatusLineTerm ctermbg=3 ctermfg=1 term=underline
+endfunction
+autocmd User AirlineAfterTheme call s:update_highlights()
 
 augroup background
     autocmd!
@@ -163,6 +188,7 @@ augroup winbg
     au WinLeave * setl wincolor=NormalNC
 augroup END
 
+call s:setcolors()
 
 " Toggle signcolumn. Works on vim>=8.1 or NeoVim
 function! ToggleSignColumn()
@@ -192,3 +218,16 @@ augroup requirements
     autocmd Bufread requirements*.txt set filetype=requirementstxt
 augroup end
 
+augroup cursorline_
+    autocmd!
+    autocmd BufEnter * set cursorline
+    autocmd BufLeave * set nocursorline
+augroup end
+
+let g:vim_lsp_java = {
+  \ 'eclipse_jdtls' : {
+    \ 'repository': expand('~/dev/jdtls/'),
+    \ 'config': 'config_linux',
+    \ 'workspace': expand('$WORKSPACE'),
+  \ },
+\ }

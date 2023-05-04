@@ -24,8 +24,7 @@ let b:ale_python_pyright_config = {
 nnoremap <leader>CC :HighlightCoverageForAll<cr><cr>
 nnoremap <leader>CO :HighlightCoverageOff<cr><cr>
 
-match Error /breakpoint()/
-match Error /__import__('pudb').set_trace()/
+match Error /(breakpoint)|(__import__('pudb').set_trace())|(assert .*assert.*)/
 
 " map insecable space to space
 inoremap   <space>
