@@ -4,3 +4,4 @@ set softtabstop=2
 set expandtab
 set list
 set listchars=tab:——
+set commentstring=--%s

@@ -38,6 +38,10 @@ Plug 'cespare/vim-toml'
 Plug 'chrisbra/csv.vim'
 Plug 'tpope/vim-jdaddy'
 Plug 'mgedmin/coverage-highlight.vim'
+Plug 'CarloDePieri/pytest-vim-compiler'
+Plug 'vim-test/vim-test'
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'GutenYe/json5.vim'
 Plug 'tikhomirov/vim-glsl'
 
 "" style
@@ -70,6 +74,12 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-characterize'
 Plug 'mbbill/undotree'
+Plug 'manasthakur/vim-asyncmake'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'jlanzarotta/bufexplorer'
 
 " DB management
 Plug 'tpope/vim-dadbod'
