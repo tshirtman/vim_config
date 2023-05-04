@@ -11,6 +11,7 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'fannheyward/coc-pyright'
 Plug 'tpope/vim-apathy'
 Plug 'psf/black'
 Plug 'fisadev/vim-isort'
@@ -41,6 +42,7 @@ Plug 'CarloDePieri/pytest-vim-compiler'
 Plug 'vim-test/vim-test'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'GutenYe/json5.vim'
+Plug 'tikhomirov/vim-glsl'
 
 "" style
 " Plug 'chriskempson/base16-vim'
@@ -79,9 +81,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jlanzarotta/bufexplorer'
 
-"" DB management
+" DB management
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'kristijanhusak/vim-dadbod-completion'
+
+"" themes
+Plug 'sickill/vim-monokai'
 
 call plug#end()

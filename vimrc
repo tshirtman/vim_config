@@ -88,6 +88,7 @@ nnoremap <silent><leader>v :Vista vim_lsp<cr>
 
 nnoremap <silent><leader>gg :UndotreeToggle<cr>
 " looking for swap mappings? g< / g> / gs  see :h swap-keywappings
+nnoremap <leader>dd :LspDocumentDiagnostic<cr>
 
 " COC
 nmap <silent> gd <Plug>(coc-definition)
@@ -200,6 +201,7 @@ function! ToggleSignColumn()
         let b:signcolumn_on=1
     endif
 endfunction
+
 nnoremap yoS :call ToggleSignColumn()<CR>
 
 function s:popup_filter(winid, key) abort
@@ -231,3 +233,14 @@ let g:vim_lsp_java = {
     \ 'workspace': expand('$WORKSPACE'),
   \ },
 \ }
+
+
+function ToggleBg()
+    if &background == "light"
+      set background=dark
+  else
+      set background=light
+    endif
+endfunction
+
+nnoremap <leader>eb :call ToggleBg()<cr>

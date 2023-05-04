@@ -4,10 +4,11 @@
     "diagnostic.errorSign": "☠️",
     "diagnostic.warningSign": "⚠️",
     "diagnostic.infoSign": "ℹ",
-    "diagnostic.hintSign": "⸮",
-    "coc.preferences.extensionUpdateCheck": "daily",
     "python.formatting.provider": "black",
     "pyright.inlayHints.enable": true,
     "pyright.inlayHints.functionReturnTypes": true,
     "pyright.inlayHints.variableTypes": true
+    "diagnostic.hintSign": "💡",
+    "coc.preferences.extensionUpdateCheck": "daily",
+    "python.linting.enabled": false
 }
