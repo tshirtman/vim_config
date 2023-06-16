@@ -80,6 +80,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'tshirtman/vim-winny'
 
 " DB management
 Plug 'tpope/vim-dadbod'
