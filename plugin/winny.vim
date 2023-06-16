@@ -103,7 +103,7 @@ function! ShowWindowNumbers()
         \ 'wrap': 0,
         \ 'line': row,
         \ 'col': col,
-        \ 'time': 2100,
+        \ 'time': 500,
         \ 'border': [],
         \ 'padding': [2, 2, 2, 2],
         \ 'borderchars': ['─', '│', '─', '│', '┌', '┐', '┘', '└'],
@@ -112,5 +112,36 @@ function! ShowWindowNumbers()
   endfor
 endfunction
 
-" Map the function to a key binding
-nnoremap <silent> <C-w>n :call ShowWindowNumbers()<CR>
+function! JumpWindow()
+    call ShowWindowNumbers()
+    redraw
+    let target = getcharstr()
+    execute target . 'wincmd w'
+endfunction
+
+function! SwapWindows(target_win = v:null)
+    let cur_buffer = bufnr("%")
+    let cur_win = winnr()
+
+    if a:target_win != v:null
+        let target_win = a:target_win
+    else
+        call ShowWindowNumbers()
+        redraw
+        let target_win = getcharstr()
+    endif
+    let target_buffer = winbufnr(target_win)
+
+    execute 'buffer ' . target_buffer
+    execute target_win . 'wincmd w'
+    execute 'buffer ' . cur_buffer
+endfunction
+
+map <Plug>WinnyJumpWindow :call JumpWindow()<cr>
+map <Plug>WinnyShowWindows :call ShowWindowNumbers()<cr>
+map <Plug>WinnySwapWindows :call SwapWindows()<cr>
+
+" suggested mappings
+" nnoremap <silent> <c-w><c-w> <Plug>WinnyJumpWindow
+" nnoremap <silent> <c-w>m <Plug>WinnySwapWindows
+" nnoremap <silent> <c-w>t <Plug>WinnyShowWindows
