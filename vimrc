@@ -244,6 +244,7 @@ function ToggleBg()
 endfunction
 
 nnoremap <leader>eb :call ToggleBg()<cr>
-nnoremap <silent> <c-w><c-w> <Plug>WinnyJumpWindow
-nnoremap <silent> <c-w>m <Plug>WinnySwapWindows
+
+nnoremap <silent> <c-w><c-w> <Plug>WinnyJumpWindowLetter
+nnoremap <silent> <c-w>m <Plug>WinnySwapWindowsLetter
 nnoremap <silent> <c-w>t <Plug>WinnyShowWindows
