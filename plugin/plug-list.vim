@@ -81,6 +81,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'tshirtman/vim-winny'
+Plug 'zef/vim-cycle'
 
 " DB management
 Plug 'tpope/vim-dadbod'
