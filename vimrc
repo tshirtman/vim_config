@@ -4,6 +4,8 @@ let mapleader = ","
 let g:tar_nomax=1
 set encoding=UTF-8
 set t_Co=256
+set shell=fish
+set splitbelow splitright
 
 if !exists("background_loaded")
     " only set the background the first time we load the vimrc
@@ -48,6 +50,7 @@ nnoremap <Down> <nop>
 nnoremap yom :silent set mouse~=a
 " nnoremap <leader>, <c-w>
 nnoremap g<cr> :terminal<cr>
+nnoremap WW :w<cr>
 
 nnoremap U :silent redo<cr>
 nnoremap <c-c> :silent close<cr>
@@ -91,12 +94,9 @@ nnoremap <silent><leader>gg :UndotreeToggle<cr>
 nnoremap <leader>dd :LspDocumentDiagnostic<cr>
 
 " COC
-nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gru <Plug>(coc-references-used)
-nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>rf <Plug>(coc-refactor)
 nmap <leader>rc <Plug>(coc-codeaction-cursor)
 vmap <leader>rc <Plug>(coc-codeaction-selected)
@@ -105,12 +105,15 @@ nmap <silent> K :call CocAction('doHover')<CR>
 
 " LSP
 nmap <leader>dd :LspDocumentDiagnostics<cr>
+nmap <silent> gd :LspDefinition<cr>
+nmap <silent> gr :LspReferences<cr>
+nmap <leader>rn :LspRename<cr>
 
 " FZF
 nnoremap <leader>T :Tag<cr>
 
 " Fugitive
-nnoremap <leader>G :Git<cr>
+nnoremap <leader>G :topleft vert Git<cr>
 
 " DBUI
 nnoremap <leader>db :DBUIToggle<cr>
@@ -226,6 +229,11 @@ augroup cursorline_
     autocmd BufLeave * set nocursorline
 augroup end
 
+augroup terminal
+    autocmd!
+    autocmd TerminalWinOpen * set wfh | res 30
+augroup end
+
 let g:vim_lsp_java = {
   \ 'eclipse_jdtls' : {
     \ 'repository': expand('~/dev/jdtls/'),
@@ -246,5 +254,15 @@ endfunction
 nnoremap <leader>eb :call ToggleBg()<cr>
 
 nnoremap <silent> <c-w><c-w> <Plug>WinnyJumpWindowLetter
-nnoremap <silent> <c-w>m <Plug>WinnySwapWindowsLetter
+nnoremap <c-w>m <Plug>WinnySwapWindowsLetter
+
 nnoremap <silent> <c-w>t <Plug>WinnyShowWindows
+
+tnoremap <c-w><c-w> <Plug>WinnyJumpWindowLetter
+tnoremap <c-w>m <Plug>WinnySwapWindowsLetter
+
+" bepo single quote getting in the way
+imap ’ '
+nmap ’ '
+cmap ’ '
+tmap ’ '
