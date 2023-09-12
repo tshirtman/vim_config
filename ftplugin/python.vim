@@ -28,3 +28,6 @@ match Error /(breakpoint)|(__import__('pudb').set_trace())|(assert .*assert.*)/
 
 " map insecable space to space
 inoremap   <space>
+
+" lint
+nmap <leader>,l :execute 'Black' \| Isort<cr>
