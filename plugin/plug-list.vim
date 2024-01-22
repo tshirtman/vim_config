@@ -13,7 +13,7 @@ Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fannheyward/coc-pyright'
 Plug 'tpope/vim-apathy'
-Plug 'psf/black'
+Plug 'psf/black', {'branch': 'stable'}
 Plug 'fisadev/vim-isort'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'

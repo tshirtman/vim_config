@@ -17,6 +17,7 @@ set bs=indent,eol,start
 set path=.
 set hidden
 set autowrite
+set autoread
 set lazyredraw
 
 set undofile
@@ -147,12 +148,12 @@ endfunction
 function! s:setcolors()
     if &background == 'dark'
         colorscheme onehalfdark
-        highlight Normal ctermbg=233
-        highlight NormalNC ctermbg=233
-        highlight NonText ctermbg=233
+        highlight Normal ctermbg=234
+        highlight NormalNC ctermbg=232
+        highlight NonText ctermbg=234
         highlight Comment ctermfg=230 cterm=bold
-        highlight CursorColumn ctermbg=236
-        highlight Pmenu ctermbg=234 ctermfg=7
+        highlight CursorColumn ctermbg=234
+        highlight Pmenu ctermbg=233 ctermfg=7
         highlight Visual cterm=reverse
         highlight VertSplit ctermbg=234 ctermfg=238
         highlight StatusLine ctermbg=3 ctermfg=1 term=bold
@@ -258,8 +259,8 @@ nnoremap <c-w>m <Plug>WinnySwapWindowsLetter
 
 nnoremap <silent> <c-w>t <Plug>WinnyShowWindows
 
-tnoremap <c-w><c-w> <Plug>WinnyJumpWindowLetter
-tnoremap <c-w>m <Plug>WinnySwapWindowsLetter
+tnoremap <c-w><c-w> <c-w><Plug>WinnyJumpWindowLetter
+tnoremap <c-w>m <c-w><Plug>WinnySwapWindowsLetter
 
 " bepo single quote getting in the way
 imap ’ '
