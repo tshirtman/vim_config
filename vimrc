@@ -3,8 +3,8 @@ filetype on
 let mapleader = ","
 let g:tar_nomax=1
 set encoding=UTF-8
-set t_Co=256
-set shell=fish
+    set t_Co=256
+    set shell=fish
 set splitbelow splitright
 
 if !exists("background_loaded")
@@ -62,6 +62,8 @@ nnoremap <a-p> :cp<cr>
 
 inoremap jj <esc>
 nnoremap _ <c-^>
+noremap WW :w<cr>
+noremap6 ° 
 
 nnoremap <leader>ts :tselect <c-r><c-w><cr>
 nnoremap <leader>tj :tjump <c-r><c-w><cr>
@@ -255,8 +257,10 @@ endfunction
 nnoremap <leader>eb :call ToggleBg()<cr>
 
 nnoremap <silent> <c-w><c-w> <Plug>WinnyJumpWindowLetter
-nnoremap <c-w>m <Plug>WinnySwapWindowsLetter
 
+tnoremap <silent> <c-w><c-w> <c-w><Plug>WinnyJumpWindowLetter
+nnoremap <silent> <c-w>m <Plug>WinnySwapWindowsLetter
+tnoremap <silent> <c-w>m <c-w><Plug>WinnySwapWindowsLetter
 nnoremap <silent> <c-w>t <Plug>WinnyShowWindows
 
 tnoremap <c-w><c-w> <c-w><Plug>WinnyJumpWindowLetter
