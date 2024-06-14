@@ -14,7 +14,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fannheyward/coc-pyright'
 Plug 'tpope/vim-apathy'
 Plug 'psf/black', {'branch': 'stable'}
-Plug 'fisadev/vim-isort'
+" Plug 'fisadev/vim-isort'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
@@ -82,6 +82,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'tshirtman/vim-winny'
 Plug 'zef/vim-cycle'
+Plug 'markonm/traces.vim'
+Plug 'diepm/vim-rest-console'
 
 " DB management
 Plug 'tpope/vim-dadbod'

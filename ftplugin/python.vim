@@ -21,8 +21,8 @@ let b:ale_python_pyright_config = {
 \}
 
 
-nnoremap <leader>CC :HighlightCoverageForAll<cr><cr>
-nnoremap <leader>CO :HighlightCoverageOff<cr><cr>
+nnoremap <silent> <leader>cc :HighlightCoverageForAll<cr>
+nnoremap <silent> <leader>co :HighlightCoverageOff<cr>
 
 match Error /(breakpoint)|(__import__('pudb').set_trace())|(assert .*assert.*)/
 

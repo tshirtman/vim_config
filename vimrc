@@ -246,16 +246,6 @@ let g:vim_lsp_java = {
 \ }
 
 
-function ToggleBg()
-    if &background == "light"
-      set background=dark
-  else
-      set background=light
-    endif
-endfunction
-
-nnoremap <leader>eb :call ToggleBg()<cr>
-
 nnoremap <silent> <c-w><c-w> <Plug>WinnyJumpWindowLetter
 
 tnoremap <silent> <c-w><c-w> <c-w><Plug>WinnyJumpWindowLetter
