@@ -84,6 +84,7 @@ Plug 'tshirtman/vim-winny'
 Plug 'zef/vim-cycle'
 Plug 'markonm/traces.vim'
 Plug 'diepm/vim-rest-console'
+Plug 'nathanaelkane/vim-indent-guides'
 
 " DB management
 Plug 'tpope/vim-dadbod'

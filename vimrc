@@ -1,6 +1,6 @@
 syntax on
 filetype on
-let mapleader = ","
+" let mapleader = "," let mapleader = " "
 let g:tar_nomax=1
 set encoding=UTF-8
     set t_Co=256
@@ -25,10 +25,15 @@ set directory=~/.vim/swap/ " move swapfiles to a common directory
 set undodir=~/.vim/undo/  " put undo files to a common directory
 
 set incsearch
-set smartcase
+set ignorecase smartcase
 set updatetime=300
 
+
+" don't treat numbers with leading 0s as octal on ^A ^X
+set nrformats-=octal
+
 set fillchars+=vert:\▏
+let g:zip_nomax=1
 
 source ~/.vim/plugin/plug-list.vim
 
@@ -178,6 +183,7 @@ function! s:update_highlights()
         highlight StatusLine ctermbg=1 ctermfg=2 term=bold
         highlight StatusLineNC ctermbg=1 ctermfg=2
         highlight StatusLineTerm ctermbg=3 ctermfg=1 term=underline
+        highlight ErrorMsg ctermfg=NONE ctermbg=8
 endfunction
 autocmd User AirlineAfterTheme call s:update_highlights()
 
