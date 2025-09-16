@@ -20,6 +20,15 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'TabbyML/vim-tabby'
+Plug 'ggml-org/llama.vim'
+" Plug 'gergap/vim-ollama'
+" Plug 'vim-denops/denops.vim'
+" Plug 'nekowasabi/aider.vim'
+Plug 'puremourning/vimspector'
+" Plug 'pasky/claude.vim'
+
+" Plug 'Exafunction/windsurf.vim'
 
 "" snippets
 Plug 'SirVer/ultisnips'
@@ -43,6 +52,7 @@ Plug 'vim-test/vim-test'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'GutenYe/json5.vim'
 Plug 'tikhomirov/vim-glsl'
+" Plug 'mvanderkamp/vim-pudb-and-jam'
 
 "" style
 " Plug 'chriskempson/base16-vim'
@@ -57,6 +67,11 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'tpope/vim-eunuch'
+
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
 
 "" git
 Plug 'tpope/vim-fugitive'
@@ -73,7 +88,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-characterize'
-Plug 'mbbill/undotree'
+" Plug 'mbbill/undotree'
 Plug 'manasthakur/vim-asyncmake'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-dispatch'
@@ -85,6 +100,7 @@ Plug 'zef/vim-cycle'
 Plug 'markonm/traces.vim'
 Plug 'diepm/vim-rest-console'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'vimwiki/vimwiki'
 
 " DB management
 Plug 'tpope/vim-dadbod'

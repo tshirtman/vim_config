@@ -14,3 +14,10 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+" Mappings
+nnoremap <c-b> :FZF<cr>
+nnoremap <silent><leader>. :Buffers<cr>
+nnoremap <silent><leader>/ :Ag<cr>
+nnoremap <silent><leader>b :Lines<cr>
+" ctags via FZF if available, otherwise fallback
+nnoremap <leader>T :Tag<cr>
