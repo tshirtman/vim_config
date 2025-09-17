@@ -6,12 +6,9 @@ endif
 
 call plug#begin()
 
-"" completion etc
+"" LSP + completion
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
-Plug 'dense-analysis/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'fannheyward/coc-pyright'
 Plug 'tpope/vim-apathy'
 Plug 'psf/black', {'branch': 'stable'}
 " Plug 'fisadev/vim-isort'
@@ -36,6 +33,8 @@ Plug 'honza/vim-snippets'
 
 "" other language support
 Plug 'vim-python/python-syntax'
+Plug 'jeetsukumaran/vim-pythonsense'
+Plug 'wellle/targets.vim'
 Plug 'anntzer/vim-cython'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -52,11 +51,17 @@ Plug 'vim-test/vim-test'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'GutenYe/json5.vim'
 Plug 'tikhomirov/vim-glsl'
+Plug 'stephpy/vim-yaml'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'Glench/Vim-Jinja2-Syntax'
 " Plug 'mvanderkamp/vim-pudb-and-jam'
 
 "" style
-" Plug 'chriskempson/base16-vim'
+" Base16 (tinted-theming successor)
+Plug 'tinted-theming/tinted-vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-sleuth'
 
 "" file management
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -101,6 +106,7 @@ Plug 'markonm/traces.vim'
 Plug 'diepm/vim-rest-console'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vimwiki/vimwiki'
+Plug 'romainl/vim-qf'
 
 " DB management
 Plug 'tpope/vim-dadbod'

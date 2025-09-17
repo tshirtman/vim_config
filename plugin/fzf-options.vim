@@ -17,7 +17,11 @@ let g:fzf_colors =
 " Mappings
 nnoremap <c-b> :FZF<cr>
 nnoremap <silent><leader>. :Buffers<cr>
-nnoremap <silent><leader>/ :Ag<cr>
+if executable('rg')
+  nnoremap <silent><leader>/ :Rg<cr>
+else
+  nnoremap <silent><leader>/ :Ag<cr>
+endif
 nnoremap <silent><leader>b :Lines<cr>
 " ctags via FZF if available, otherwise fallback
 nnoremap <leader>T :Tag<cr>
