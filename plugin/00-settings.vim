@@ -3,6 +3,7 @@ set encoding=UTF-8
 set t_Co=256
 set shell=fish
 set splitbelow splitright
+set noequalalways
 
 if !exists("background_loaded")
     let background_loaded=1
